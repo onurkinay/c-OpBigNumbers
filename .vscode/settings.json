@@ -1,0 +1,22 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "d:\\projelerim\\fsmvu\\c-sum",
+            "binaryPath": "d:\\projelerim\\fsmvu\\c-sum\\matrix",
+            "binaryArgs": []
+        },
+        {
+            "cwd": "d:\\projelerim\\fsmvu\\c-sum",
+            "binaryPath": "d:\\projelerim\\fsmvu\\c-sum\\sum",
+            "binaryArgs": []
+        },
+        {
+            "cwd": "d:\\projelerim\\fsmvu\\c-sum\\c-OpBigNumbers",
+            "binaryPath": "d:\\projelerim\\fsmvu\\c-sum\\c-OpBigNumbers\\sum",
+            "binaryArgs": []
+        }
+    ],
+    "files.associations": {
+        "islemler.h": "c"
+    }
+}

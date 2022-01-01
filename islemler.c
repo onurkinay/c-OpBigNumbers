@@ -24,7 +24,7 @@ uint8_t *readFile(char *fileName, int maxBasamak)
         }
     }
 
-    int fclose(FILE * fp);
+    fclose(fp);
 
     return sayi;
 }
@@ -126,4 +126,5 @@ void saveResult(uint8_t *sayi, int length)
         ilkSifirlar = 0;
     }
     printf("\n");
+    fclose(fp);
 }

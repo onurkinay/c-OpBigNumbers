@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
-int readFile(char*, int*);
+uint8_t* readFile(char*, int);
 int CharCounter(char*);
-void readArray(int*, int);
-int* doMath(int* , int*, int,int);
+void readArray(uint8_t*, int);
+uint8_t* doMath(uint8_t* , uint8_t*, int);
+uint8_t* createBigNumber(int);

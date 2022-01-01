@@ -8,7 +8,7 @@ mingw32-make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Dec 30 19:34:39 2021
+# Make data base, printed on Fri Dec 31 15:33:07 2021
 
 # Variables
 
@@ -21,23 +21,21 @@ USERPROFILE = C:\Users\tekno
 # environment
 LOCALAPPDATA = C:\Users\tekno\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-7044847b-25cf-4790-ac16-693a44928d2a-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-c684a07b-5346-4f10-8e74-259699eab45f-sock
 # environment
-WSLENV = WT_SESSION::WT_PROFILE_ID
-# environment
-VSCODE_CWD = D:\projelerim\fsmvu\c-sum\c-OpBigNumbers
+VSCODE_CWD = C:\Users\tekno\AppData\Local\Programs\Microsoft VS Code
 # environment
 SYSTEMROOT = C:\Windows
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-PSMODULEPATH = C:\Users\tekno\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := C:/msys64/mingw64/bin/mingw32-make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_22692_VUMAQMWMPPBIHWPF
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13696_WNNEBHGPNOVAPVXB
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -89,11 +87,9 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 22692
+VSCODE_PID = 13696
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
-# environment
-WT_PROFILE_ID = {61c54bbd-c2c6-5271-96e7-009a87ff44bf}
 # automatic
 *F = $(notdir $*)
 # automatic
@@ -135,8 +131,6 @@ PROMPT = $P$G
 # environment
 UIPATH_USER_SERVICE_PATH = C:\Users\tekno\AppData\Local\Programs\UiPath\Studio\UiPath.Service.UserHost.exe
 # environment
-WT_SESSION = e5b8732a-32f2-4cba-ba2c-9ea40329c92a
-# environment
 UIPATH_LANGUAGE = en
 # environment
 LOGONSERVER = \\ONUR
@@ -151,7 +145,7 @@ COMMONPROGRAMFILES = C:\Program Files\Common Files
 # environment
 PROGRAMW6432 = C:\Program Files
 # environment
-PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # automatic
 +F = $(notdir $+)
 # environment
@@ -199,9 +193,7 @@ SUFFIXES :=
 # environment
 ALLUSERSPROFILE = C:\ProgramData
 # environment
-VSCODE_CLI = 1
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
+SESSIONNAME = Console
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
@@ -209,7 +201,7 @@ PROCESSOR_REVISION = 1801
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
 # variable set hash-table stats:
-# Load=98/1024=10%, Rehash=0, Collisions=11/125=9%
+# Load=94/1024=9%, Rehash=0, Collisions=9/121=7%
 
 # Pattern-specific Variable Values
 
@@ -217,7 +209,7 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
 
 # Directories
 
-# . (key d:/projelerim/fsmvu/c-sum/c-OpBigNumbers, mtime 1640882039): 12 files, no impossibilities.
+# . (key d:/projelerim/fsmvu/c-sum/c-OpBigNumbers, mtime 1640883528): 12 files, no impossibilities.
 
 # 12 files, no impossibilities in 1 directories.
 
@@ -268,6 +260,6 @@ program:
 # strcache performance: lookups = 21 / hit rate = 23%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/21=0%
-# Finished Make data base on Thu Dec 30 19:34:39 2021
+# Finished Make data base on Fri Dec 31 15:33:07 2021
 
  

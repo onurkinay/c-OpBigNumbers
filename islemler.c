@@ -58,7 +58,7 @@ void readArray(uint8_t *array, int length)
     printf("\n");
 }
 
-uint8_t *doMath(uint8_t *sayi1, uint8_t *sayi2, int max)
+uint8_t *Sum(uint8_t *sayi1, uint8_t *sayi2, int max)
 {
     uint8_t *sonuc = createBigNumber(max);
 
@@ -68,6 +68,36 @@ uint8_t *doMath(uint8_t *sayi1, uint8_t *sayi2, int max)
         *(sonuc + i) = ((*(sayi1 + i) + *(sayi2 + i)) + elde) % 10;
 
         elde = ((*(sayi1 + i) + *(sayi2 + i)) + elde) / 10;
+    }
+    saveResult(sonuc, max);
+    return sonuc;
+}
+
+uint8_t *Diff(uint8_t *sayi1, uint8_t *sayi2, int max)
+{
+    uint8_t *sonuc = createBigNumber(max);
+    int carry = 0;
+    for (int i = max - 1; i >= 0; i--)
+    {
+
+        if ((int)(*(sayi1 + i) - *(sayi2 + i) - carry) >= 0)
+        {
+            *(sonuc + i) = ((*(sayi1 + i) - *(sayi2 + i)) - carry);
+            carry = 0;
+        }
+        else
+        { 
+            int j = 1;
+            while ( *(sonuc + i - j) == 0)
+            {
+                *(sonuc + i - j) = 9;
+                j++;
+            }
+
+            *(sonuc + i - j) = *(sonuc + i - j) - 1;
+            *(sonuc + i) = ( (*(sayi1 + i)) + (10-carry) ) - *(sayi2 + i);
+            carry = 1;
+        }
     }
     saveResult(sonuc, max);
     return sonuc;
@@ -91,8 +121,8 @@ void saveResult(uint8_t *sayi, int length)
     for (int i = 0; i < length; i++)
     {
         if (*(sayi + i) == 0 && ilkSifirlar)
-            continue; 
-        fputc(*(sayi + i)+48, fp); 
+            continue;
+        fputc(*(sayi + i) + 48, fp);
         ilkSifirlar = 0;
     }
     printf("\n");

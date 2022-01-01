@@ -41,7 +41,7 @@ int main()
             sayi1 = readFile("sayi1.txt", max);
             sayi2 = readFile("sayi2.txt", max);
 
-             printf("!!!SAYILAR BASARILI BIR SEKILDE ALINDI!!!\n");
+            printf("!!!SAYILAR BASARILI BIR SEKILDE ALINDI!!!\n");
         }
         else if (islem == '2')
         {
@@ -65,9 +65,15 @@ int main()
             {
                 printf("!!!ONCELIKLE DOSYA OKUYUNUZ!!!\n");
             }
-            else
+            else if (islem == '+')
             {
-                sonuc = doMath(sayi1, sayi2, max);
+                sonuc = Sum(sayi1, sayi2, max);
+                islemYapildiMi = 1;
+                printf("\nISLEM BASARIYLA GERCEKLESTIRILDI VE DOSYA OLARAK KAYDEDILDI\n");
+            }
+            else if (islem == '-')
+            {
+                sonuc = Diff(sayi1, sayi2, max);
                 islemYapildiMi = 1;
                 printf("\nISLEM BASARIYLA GERCEKLESTIRILDI VE DOSYA OLARAK KAYDEDILDI\n");
             }
@@ -88,4 +94,8 @@ int main()
         getchar();
         getchar();
     } while (islem != '5');
+
+    free(sayi1);
+    free(sayi2);
+    free(sonuc);
 }

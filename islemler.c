@@ -11,7 +11,6 @@
 #include <stdint.h>
 #include "islemler.h"
 
-
 uint8_t *createBigNumber(int basamak)
 {
     uint8_t *bigNumber = (uint8_t *)malloc(basamak * sizeof(uint8_t));
@@ -23,7 +22,6 @@ uint8_t *createBigNumber(int basamak)
     return bigNumber;
 }
 
-
 uint8_t *readFile(char *fileName, int maxBasamak)
 {
     int charCount = CharCounter(fileName);
@@ -31,6 +29,11 @@ uint8_t *readFile(char *fileName, int maxBasamak)
     uint8_t *sayi = createBigNumber(maxBasamak);
 
     FILE *fp = fopen(fileName, "r");
+    if (fp == NULL)
+    {
+        printf("!!!HATA: %s ISIMLI DOSYA YOK!!!", fileName);
+        exit(EXIT_FAILURE);
+    }
     int i = 0;
 
     while (1)
@@ -42,6 +45,11 @@ uint8_t *readFile(char *fileName, int maxBasamak)
         {
             *(sayi + (maxBasamak - charCount) + i) = buff - 48;
             i++;
+        }
+        else
+        { //sayı dışı bir veri varsa
+            printf("!!!HATA: SAYI DOSYASI FORMATA UYGUN DEGIL!!!");
+            exit(EXIT_FAILURE);
         }
     }
 
@@ -65,10 +73,14 @@ void saveResult(uint8_t *sayi, int length)
     fclose(fp);
 }
 
-
 int CharCounter(char *fileName)
 {
     FILE *fp = fopen(fileName, "r");
+     if (fp == NULL)
+    {
+        printf("!!!HATA: %s ISIMLI DOSYA YOK!!!", fileName);
+        exit(EXIT_FAILURE);
+    }
     int i = 0;
     while (1)
     {
@@ -123,21 +135,19 @@ uint8_t *Diff(uint8_t *sayi1, uint8_t *sayi2, int max)
             carry = 0;
         }
         else
-        { 
+        {
             int j = 1;
-            while ( *(sonuc + i - j) == 0)
+            while (*(sonuc + i - j) == 0)
             {
                 *(sonuc + i - j) = 9;
                 j++;
             }
 
             *(sonuc + i - j) = *(sonuc + i - j) - 1;
-            *(sonuc + i) = ( (*(sayi1 + i)) + (10-carry) ) - *(sayi2 + i);
+            *(sonuc + i) = ((*(sayi1 + i)) + (10 - carry)) - *(sayi2 + i);
             carry = 1;
         }
     }
     saveResult(sonuc, max);
     return sonuc;
 }
-
-

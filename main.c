@@ -17,6 +17,7 @@ int main()
      
     uint8_t* sonuc = doMath(sayi1,sayi2,max);
   
-    readArray(sonuc,max);
+    
+    //readArray(sonuc,max);
      
 }

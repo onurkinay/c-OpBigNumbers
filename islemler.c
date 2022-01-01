@@ -3,9 +3,9 @@
 #include <stdint.h>
 #include "islemler.h"
 
-uint8_t *readFile(char *fileName, int maxBasamak) //5000
+uint8_t *readFile(char *fileName, int maxBasamak)
 {
-    int charCount = CharCounter(fileName); //2000
+    int charCount = CharCounter(fileName);
 
     uint8_t *sayi = createBigNumber(maxBasamak);
 
@@ -52,27 +52,24 @@ void readArray(uint8_t *array, int length)
     {
         if (*(array + i) == 0 && ilkSifirlar)
             continue;
-         printf("%d", *(array + i));
-         ilkSifirlar=0;
+        printf("%d", *(array + i));
+        ilkSifirlar = 0;
     }
     printf("\n");
 }
 
 uint8_t *doMath(uint8_t *sayi1, uint8_t *sayi2, int max)
 {
-
     uint8_t *sonuc = createBigNumber(max);
 
     int elde = 0;
     for (int i = max - 1; i >= 0; i--)
     {
-        // *(sonuc+i) = ((*(sayi1+i) + *(sayi2+min-j))+elde)%10;
-
         *(sonuc + i) = ((*(sayi1 + i) + *(sayi2 + i)) + elde) % 10;
 
         elde = ((*(sayi1 + i) + *(sayi2 + i)) + elde) / 10;
     }
-
+    saveResult(sonuc, max);
     return sonuc;
 }
 
@@ -85,4 +82,18 @@ uint8_t *createBigNumber(int basamak)
         *(bigNumber + i) = 0;
     }
     return bigNumber;
+}
+
+void saveResult(uint8_t *sayi, int length)
+{
+    FILE *fp = fopen("sonuc.txt", "w");
+    int ilkSifirlar = 1;
+    for (int i = 0; i < length; i++)
+    {
+        if (*(sayi + i) == 0 && ilkSifirlar)
+            continue; 
+        fputc(*(sayi + i)+48, fp); 
+        ilkSifirlar = 0;
+    }
+    printf("\n");
 }

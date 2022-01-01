@@ -7,3 +7,4 @@ int CharCounter(char*);
 void readArray(uint8_t*, int);
 uint8_t* doMath(uint8_t* , uint8_t*, int);
 uint8_t* createBigNumber(int);
+void saveResult(uint8_t* , int);

@@ -46,9 +46,11 @@ uint8_t *readFile(char *fileName, int maxBasamak)
             *(sayi + (maxBasamak - charCount) + i) = buff - 48;
             i++;
         }
+        else if (buff == 10)
+            continue;
         else
         { //sayı dışı bir veri varsa
-            printf("!!!HATA: SAYI DOSYASI FORMATA UYGUN DEGIL!!!");
+            printf("!!!HATA: %s SAYI DOSYASI FORMATA UYGUN DEGIL!!! %d %d", fileName, buff, i);
             exit(EXIT_FAILURE);
         }
     }
@@ -76,7 +78,7 @@ void saveResult(uint8_t *sayi, int length)
 int CharCounter(char *fileName)
 {
     FILE *fp = fopen(fileName, "r");
-     if (fp == NULL)
+    if (fp == NULL)
     {
         printf("!!!HATA: %s ISIMLI DOSYA YOK!!!", fileName);
         exit(EXIT_FAILURE);

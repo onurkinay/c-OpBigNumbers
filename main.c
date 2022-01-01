@@ -33,7 +33,7 @@ int main()
 
     do
     {
-        printf("\n==================Buyuk sayilar ile matematiksel işlemler=================\n");
+        printf("\n==================Buyuk sayilar ile matematiksel islemler=================\n");
 
         printf("[1]-> Dosyadan sayilari oku: (1)\n");
         printf("[2]-> Okunan sayilari ekrana yaz: (2)\n");
@@ -100,8 +100,12 @@ int main()
                 readArray(sonuc, max);
             else
                 printf("ONCELIKLE ISLEMI GERCEKLESTIRINIZ\n");
-        }else{
-             printf("GECERSIZ KOMUT\n");
+        }
+        else if (islem == '5')
+            break; 
+        else
+        { 
+            printf("GECERSIZ KOMUT\n");
         }
 
         printf("DEVAM ETMEK ICIN ENTER\n");

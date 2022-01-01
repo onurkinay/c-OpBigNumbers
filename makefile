@@ -1,2 +1,2 @@
 program:
-	gcc main.c islemler.c -o sum
+	gcc main.c islemler.c -o bignumbers

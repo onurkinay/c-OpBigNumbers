@@ -1,3 +1,11 @@
+/*
+* @file main.c
+* @description Ana program dosyasıdır
+* @assignment Proje 2
+* @date 30 December 2021
+* @author Onur Kınay onur.kinay@stu.fsm.edu.tr
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>

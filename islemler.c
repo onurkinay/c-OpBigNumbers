@@ -1,7 +1,28 @@
+/*
+* @file islemler.c
+* @description Fonksiyonların tutulduğu dosyadır
+* @assignment Proje 2
+* @date 30 December 2021
+* @author Onur Kınay onur.kinay@stu.fsm.edu.tr
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include "islemler.h"
+
+
+uint8_t *createBigNumber(int basamak)
+{
+    uint8_t *bigNumber = (uint8_t *)malloc(basamak * sizeof(uint8_t));
+
+    for (int i = 0; i < basamak; i++)
+    {
+        *(bigNumber + i) = 0;
+    }
+    return bigNumber;
+}
+
 
 uint8_t *readFile(char *fileName, int maxBasamak)
 {
@@ -28,6 +49,22 @@ uint8_t *readFile(char *fileName, int maxBasamak)
 
     return sayi;
 }
+
+void saveResult(uint8_t *sayi, int length)
+{
+    FILE *fp = fopen("sonuc.txt", "w");
+    int ilkSifirlar = 1;
+    for (int i = 0; i < length; i++)
+    {
+        if (*(sayi + i) == 0 && ilkSifirlar)
+            continue;
+        fputc(*(sayi + i) + 48, fp);
+        ilkSifirlar = 0;
+    }
+    printf("\n");
+    fclose(fp);
+}
+
 
 int CharCounter(char *fileName)
 {
@@ -103,28 +140,4 @@ uint8_t *Diff(uint8_t *sayi1, uint8_t *sayi2, int max)
     return sonuc;
 }
 
-uint8_t *createBigNumber(int basamak)
-{
-    uint8_t *bigNumber = (uint8_t *)malloc(basamak * sizeof(uint8_t));
 
-    for (int i = 0; i < basamak; i++)
-    {
-        *(bigNumber + i) = 0;
-    }
-    return bigNumber;
-}
-
-void saveResult(uint8_t *sayi, int length)
-{
-    FILE *fp = fopen("sonuc.txt", "w");
-    int ilkSifirlar = 1;
-    for (int i = 0; i < length; i++)
-    {
-        if (*(sayi + i) == 0 && ilkSifirlar)
-            continue;
-        fputc(*(sayi + i) + 48, fp);
-        ilkSifirlar = 0;
-    }
-    printf("\n");
-    fclose(fp);
-}

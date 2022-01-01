@@ -5,7 +5,11 @@
 * @date 30 December 2021
 * @author Onur Kınay onur.kinay@stu.fsm.edu.tr
 */
-
+/**
+ * DOSYALAR YOKSA HATA VERMELİ +
+ * SAYI DOSYALARINDA INT DISINDA CHAR VARSA HATA VERMELİ +
+ * 
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -95,7 +99,9 @@ int main()
             else if (islemYapildiMi)
                 readArray(sonuc, max);
             else
-                printf("ONCELIKLE ISLEMI GERCEKLESTIRINIZ");
+                printf("ONCELIKLE ISLEMI GERCEKLESTIRINIZ\n");
+        }else{
+             printf("GECERSIZ KOMUT\n");
         }
 
         printf("DEVAM ETMEK ICIN ENTER\n");

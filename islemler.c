@@ -11,7 +11,7 @@
 #include <stdint.h>
 #include "islemler.h"
 
-uint8_t *createBigNumber(int basamak)//sayı oluşturma fonk.
+uint8_t *createBigNumber(int basamak)//sayının tutulacağı yeri ayırma ve adresi döndürme fonk.
 {
     uint8_t *bigNumber = (uint8_t *)malloc(basamak * sizeof(uint8_t));
 
@@ -41,7 +41,7 @@ uint8_t *readFile(char *fileName, int maxBasamak)//dosya okuma ve diziye aktarma
         int buff = fgetc(fp);//ascii olarak alır
         if (feof(fp))
             break;
-        if (buff >= 48 && buff <= 57)// 0 -> 48 -- 9 -> 57 //ascii
+        if (buff >= 48 && buff <= 57)// 0 = 48 <--> 9 = 57 //ascii
         {
             *(sayi + (maxBasamak - charCount) + i) = buff - 48;//ascii'den decimale çevirme
             i++;
@@ -61,7 +61,7 @@ uint8_t *readFile(char *fileName, int maxBasamak)//dosya okuma ve diziye aktarma
 }
 
 
-int CharCounter(char *fileName) // basamak sayacı
+int CharCounter(char *fileName) // sayının kaç basamaklı olduğunu göster
 {
     FILE *fp = fopen(fileName, "r");
     if (fp == NULL)
@@ -85,7 +85,7 @@ int CharCounter(char *fileName) // basamak sayacı
 void saveResult(uint8_t *sayi, int length)//diziyi dosyaya kaydetme
 {
     FILE *fp = fopen("sonuc.txt", "w");
-    int ilkSifirlar = 1;// soldaki basamaklar 0 olanları es geçmek için 000011204 --> 11204
+    int ilkSifirlar = 1;// soldaki basamaklar 0 olanları es geçmek için kullanılacak => 000011204 --> 11204
     for (int i = 0; i < length; i++)
     {
         if (*(sayi + i) == 0 && ilkSifirlar)
@@ -97,7 +97,7 @@ void saveResult(uint8_t *sayi, int length)//diziyi dosyaya kaydetme
     fclose(fp);
 }
 
-void readArray(uint8_t *array, int length)//array'ı ekrana yazdırma
+void readArray(uint8_t *array, int length)//sayıyı ekrana yazdırma
 {
     int ilkSifirlar = 1;// soldaki basamaklar 0 olanları es geçmek için 000011204 --> 11204
     for (int i = 0; i < length; i++)

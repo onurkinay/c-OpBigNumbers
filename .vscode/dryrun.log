@@ -1,5 +1,5 @@
 C:\msys64\mingw64\bin\mingw32-make.exe --dry-run --always-make --keep-going --print-directory
 mingw32-make: Entering directory 'd:/projelerim/fsmvu/c-sum/c-OpBigNumbers'
-gcc main.c islemler.c -o sum
+gcc main.c islemler.c -o bignumbers
 mingw32-make: Leaving directory 'd:/projelerim/fsmvu/c-sum/c-OpBigNumbers'
  

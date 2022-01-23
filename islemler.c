@@ -11,7 +11,7 @@
 #include <stdint.h>
 #include "islemler.h"
 
-uint8_t *createBigNumber(int basamak)
+uint8_t *createBigNumber(int basamak)//sayı oluşturma fonk.
 {
     uint8_t *bigNumber = (uint8_t *)malloc(basamak * sizeof(uint8_t));
 
@@ -22,7 +22,7 @@ uint8_t *createBigNumber(int basamak)
     return bigNumber;
 }
 
-uint8_t *readFile(char *fileName, int maxBasamak)
+uint8_t *readFile(char *fileName, int maxBasamak)//dosya okuma ve diziye aktarma
 {
     int charCount = CharCounter(fileName);
 
@@ -38,18 +38,18 @@ uint8_t *readFile(char *fileName, int maxBasamak)
 
     while (1)
     {
-        int buff = fgetc(fp);
+        int buff = fgetc(fp);//ascii olarak alır
         if (feof(fp))
             break;
-        if (buff >= 48 && buff <= 57)
+        if (buff >= 48 && buff <= 57)// 0 -> 48 -- 9 -> 57 //ascii
         {
-            *(sayi + (maxBasamak - charCount) + i) = buff - 48;
+            *(sayi + (maxBasamak - charCount) + i) = buff - 48;//ascii'den decimale çevirme
             i++;
         }
-        else if (buff == 10)
+        else if (buff == 10)//alt satır(ascii 10) pas geçme
             continue;
         else
-        { //sayı dışı bir veri varsa
+        { //sayı dışı(harf vs.) bir char varsa
             printf("!!!HATA: %s SAYI DOSYASI FORMATA UYGUN DEGIL!!! %d %d", fileName, buff, i);
             exit(EXIT_FAILURE);
         }
@@ -60,22 +60,8 @@ uint8_t *readFile(char *fileName, int maxBasamak)
     return sayi;
 }
 
-void saveResult(uint8_t *sayi, int length)
-{
-    FILE *fp = fopen("sonuc.txt", "w");
-    int ilkSifirlar = 1;
-    for (int i = 0; i < length; i++)
-    {
-        if (*(sayi + i) == 0 && ilkSifirlar)
-            continue;
-        fputc(*(sayi + i) + 48, fp);
-        ilkSifirlar = 0;
-    }
-    printf("\n");
-    fclose(fp);
-}
 
-int CharCounter(char *fileName)
+int CharCounter(char *fileName) // basamak sayacı
 {
     FILE *fp = fopen(fileName, "r");
     if (fp == NULL)
@@ -89,16 +75,31 @@ int CharCounter(char *fileName)
         int number = fgetc(fp);
         if (feof(fp))
             break;
-        if (number > 47 && number < 58)
+        if (number > 47 && number < 58)// 0 -> 48 -- 9 -> 57 //ascii
             i++;
     }
     int fclose(FILE * fp);
     return i;
 }
 
-void readArray(uint8_t *array, int length)
+void saveResult(uint8_t *sayi, int length)//diziyi dosyaya kaydetme
 {
-    int ilkSifirlar = 1;
+    FILE *fp = fopen("sonuc.txt", "w");
+    int ilkSifirlar = 1;// soldaki basamaklar 0 olanları es geçmek için 000011204 --> 11204
+    for (int i = 0; i < length; i++)
+    {
+        if (*(sayi + i) == 0 && ilkSifirlar)
+            continue;
+        fputc(*(sayi + i) + 48, fp);
+        ilkSifirlar = 0;
+    }
+    printf("\n");
+    fclose(fp);
+}
+
+void readArray(uint8_t *array, int length)//array'ı ekrana yazdırma
+{
+    int ilkSifirlar = 1;// soldaki basamaklar 0 olanları es geçmek için 000011204 --> 11204
     for (int i = 0; i < length; i++)
     {
         if (*(array + i) == 0 && ilkSifirlar)
@@ -109,7 +110,7 @@ void readArray(uint8_t *array, int length)
     printf("\n");
 }
 
-uint8_t *Sum(uint8_t *sayi1, uint8_t *sayi2, int max)
+uint8_t *Sum(uint8_t *sayi1, uint8_t *sayi2, int max)//toplama işlemi
 {
     uint8_t *sonuc = createBigNumber(max);
 
@@ -118,20 +119,20 @@ uint8_t *Sum(uint8_t *sayi1, uint8_t *sayi2, int max)
     {
         *(sonuc + i) = ((*(sayi1 + i) + *(sayi2 + i)) + elde) % 10;
 
-        elde = ((*(sayi1 + i) + *(sayi2 + i)) + elde) / 10;
+        elde = ((*(sayi1 + i) + *(sayi2 + i)) + elde) / 10;//elde var 
     }
-    saveResult(sonuc, max);
+    saveResult(sonuc, max);//sonucu dosya olarak kaydet
     return sonuc;
 }
 
-uint8_t *Diff(uint8_t *sayi1, uint8_t *sayi2, int max)
+uint8_t *Diff(uint8_t *sayi1, uint8_t *sayi2, int max)//çıkarma işlemi
 {
     uint8_t *sonuc = createBigNumber(max);
     int carry = 0;
     for (int i = max - 1; i >= 0; i--)
     {
 
-        if ((int)(*(sayi1 + i) - *(sayi2 + i) - carry) >= 0)
+        if ((int)(*(sayi1 + i) - *(sayi2 + i) - carry) >= 0)//iki basamağın farkı 0'dan az değil ise
         {
             *(sonuc + i) = ((*(sayi1 + i) - *(sayi2 + i)) - carry);
             carry = 0;
@@ -139,9 +140,9 @@ uint8_t *Diff(uint8_t *sayi1, uint8_t *sayi2, int max)
         else
         {
             int j = 1;
-            while (*(sonuc + i - j) == 0)
+            while (*(sonuc + i - j) == 0)//komşu basamağı sıfırdan farklı olanlara ziyaret et
             {
-                *(sonuc + i - j) = 9;
+                *(sonuc + i - j) = 9;// bir tane ödünç aldım
                 j++;
             }
 

@@ -10,11 +10,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#ifndef __ISLEMLER_H__
+#define __ISLEMLER_H__
 
+uint8_t* createBigNumber(int);
 uint8_t* readFile(char*, int);
 int CharCounter(char*);
+void saveResult(uint8_t* , int);
 void readArray(uint8_t*, int);
 uint8_t* Sum(uint8_t* , uint8_t*, int);
 uint8_t* Diff(uint8_t* , uint8_t*, int);
-uint8_t* createBigNumber(int);
-void saveResult(uint8_t* , int);
+
+#endif
+

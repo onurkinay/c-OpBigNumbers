@@ -8,7 +8,7 @@ mingw32-make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Dec 31 15:33:07 2021
+# Make data base, printed on Sun Jan 23 12:35:52 2022
 
 # Variables
 
@@ -21,7 +21,7 @@ USERPROFILE = C:\Users\tekno
 # environment
 LOCALAPPDATA = C:\Users\tekno\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-c684a07b-5346-4f10-8e74-259699eab45f-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-9c014508-e96b-45f4-8d10-02c4273cb267-sock
 # environment
 VSCODE_CWD = C:\Users\tekno\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -35,7 +35,7 @@ MAKE_COMMAND := C:/msys64/mingw64/bin/mingw32-make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13696_WNNEBHGPNOVAPVXB
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_10468_WIAJKIEDXERZHQPR
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -87,7 +87,9 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 13696
+VSCODE_PID = 10468
+# environment
+DISABLE_LAYER_AMD_SWITCHABLE_GRAPHICS_1 = 1
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # automatic
@@ -119,7 +121,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = D:\program\oracledbxe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\obs-studio\bin\64bit;C:\Program Files\dotnet\;C:\Users\tekno\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\tekno\AppData\Local\Programs\Python\Python310\;C:\Users\tekno\AppData\Local\Microsoft\WindowsApps;C:\Users\tekno\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\mingw64\bin;C:\Users\tekno\AppData\Local\GitHubDesktop\bin;C:\Users\tekno\.dotnet\tools
+PATH = C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;D:\program\oracledbxe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\obs-studio\bin\64bit;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\tekno\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\tekno\AppData\Local\Programs\Python\Python310\;C:\Users\tekno\AppData\Local\Microsoft\WindowsApps;C:\Users\tekno\AppData\Local\Programs\Microsoft VS Code\bin;C:\msys64\mingw64\bin;C:\Users\tekno\AppData\Local\GitHubDesktop\bin;C:\Users\tekno\.dotnet\tools;C:\Users\tekno\AppData\Roaming\Composer\vendor\bin
 # environment
 COMPUTERNAME = ONUR
 # default
@@ -201,7 +203,7 @@ PROCESSOR_REVISION = 1801
 # environment
 PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
 # variable set hash-table stats:
-# Load=94/1024=9%, Rehash=0, Collisions=9/121=7%
+# Load=95/1024=9%, Rehash=0, Collisions=9/122=7%
 
 # Pattern-specific Variable Values
 
@@ -209,9 +211,9 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
 
 # Directories
 
-# . (key d:/projelerim/fsmvu/c-sum/c-OpBigNumbers, mtime 1640883528): 12 files, no impossibilities.
+# . (key d:/projelerim/fsmvu/c-sum/c-OpBigNumbers, mtime 1641216975): 14 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -235,7 +237,7 @@ all:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-12-30 18:13:41
+#  Last modified 2022-01-01 23:29:34
 #  File has been updated.
 #  Successfully updated.
 
@@ -244,7 +246,7 @@ program:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 2):
-	gcc main.c islemler.c -o sum
+	gcc main.c islemler.c -o bignumbers
 
 # files hash-table stats:
 # Load=5/1024=0%, Rehash=0, Collisions=0/15=0%
@@ -254,12 +256,12 @@ program:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 130 B / avg = 8 B
-# current buf: size = 8162 B / used = 130 B / count = 16 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 18 / storage = 158 B / avg = 8 B
+# current buf: size = 8162 B / used = 158 B / count = 18 / avg = 8 B
 
-# strcache performance: lookups = 21 / hit rate = 23%
+# strcache performance: lookups = 23 / hit rate = 21%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=0/21=0%
-# Finished Make data base on Fri Dec 31 15:33:07 2021
+# Load=18/8192=0%, Rehash=0, Collisions=0/23=0%
+# Finished Make data base on Sun Jan 23 12:35:52 2022
 
  

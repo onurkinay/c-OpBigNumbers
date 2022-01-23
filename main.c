@@ -19,6 +19,9 @@ int main()
     int sayi2Basamak = -1;//sayı iki'in basamağı
     int max = -1;//maksimum basamak
 
+    /* 
+        Büyük sayıların tutulacağı değişkenler
+    */
     uint8_t *sayi1;
     uint8_t *sayi2;
     uint8_t *sonuc;
@@ -39,7 +42,7 @@ int main()
 
         if (islem == '1')//Dosyadan sayilari oku
         {
-            sayi1Basamak = CharCounter("sayi1.txt");
+            sayi1Basamak = CharCounter("sayi1.txt");//basamak sayacı
             sayi2Basamak = CharCounter("sayi2.txt");
 
             max = ((sayi1Basamak > sayi2Basamak) ? sayi1Basamak : sayi2Basamak) + 1;//kimin sayının basamağı en fazla??
@@ -77,7 +80,7 @@ int main()
                 islemYapildiMi = 1;
                 printf("ISLEM BASARIYLA GERCEKLESTIRILDI VE DOSYA OLARAK KAYDEDILDI\n");
             }
-            else if (islem == '-')
+            else if (islem == '-')//ÇIKARMA İŞLEMİ
             {
                 sonuc = Diff(sayi1, sayi2, max);
                 islemYapildiMi = 1;
@@ -106,7 +109,7 @@ int main()
         getchar();
     } 
 
-    free(sayi1);
+    free(sayi1);//memory temizle
     free(sayi2);
     free(sonuc);
 }

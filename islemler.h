@@ -15,8 +15,8 @@
 
 uint8_t* createBigNumber(int);
 uint8_t* readFile(char*, int);
-int CharCounter(char*);
-void saveResult(uint8_t* , int);
+int DigitCounter(char*);
+void saveArray(uint8_t* , int);
 void readArray(uint8_t*, int);
 uint8_t* Sum(uint8_t* , uint8_t*, int);
 uint8_t* Diff(uint8_t* , uint8_t*, int);

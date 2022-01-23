@@ -26,7 +26,7 @@ int main()
     uint8_t *sayi2;
     uint8_t *sonuc;
 
-    int islemYapildiMi = 0;//işlem gerçekleştirilmiş mi??
+    int islemYapildiMi = 0;//matematik işlem gerçekleştirilmiş mi??
 
     while(1)//MENÜ EKRANI
     {
@@ -42,8 +42,8 @@ int main()
 
         if (islem == '1')//Dosyadan sayilari oku
         {
-            sayi1Basamak = CharCounter("sayi1.txt");//basamak sayacı
-            sayi2Basamak = CharCounter("sayi2.txt");
+            sayi1Basamak = DigitCounter("sayi1.txt");//basamak sayacı
+            sayi2Basamak = DigitCounter("sayi2.txt");
 
             max = ((sayi1Basamak > sayi2Basamak) ? sayi1Basamak : sayi2Basamak) + 1;//kimin sayının basamağı en fazla??
 
